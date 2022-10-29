@@ -6,4 +6,14 @@ To-Do List
 
 {% block content %}
 <h1>My To-Do List</h1>
+<a href="{% url 'create' %}">New task</a>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <a href="{% url 'detail' pk=task.pk %}">{{ task.title }}</a>
+        <p>{{ task.description }}</p>
+        <a href="{% url 'delete' pk=task.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
