@@ -1,3 +1,5 @@
+{% load sass_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,14 +11,12 @@
         {% block title %}
         {% endblock %}
     </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="{% sass_src 'base.scss' %}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <!-- <form method="GET" action="search/">
-        {% csrf_token %}
-        <input type="search" name="search">
-        <input type="submit" value="Search a car">
-    </form> -->
     {% block content %}
     {% endblock %}
 </body>

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # My apps
     'todo_list',
     # Third party apps
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,14 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+# Django Sass
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
