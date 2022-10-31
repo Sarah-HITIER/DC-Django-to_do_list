@@ -2,12 +2,12 @@
 
 {% block content %}
 <h1>{{ task.title }}</h1>
-
-<div class="task">
-    <p>{{ task.description }}</p>
-    <a href="{% url 'update' task.pk %}">Update</a>
+<p>{{ task.get_status_display }}</p>
+<p>Limit date: {{ task.limit_date }}</p>
+<p>{{ task.description }}</p>
+<div class="actions-buttons">
+    <a href="{% url 'update' task.pk %}" class="button primary-button">Update</a>
+    <a href="{% url 'home' %}" class="button secondary-button">Let's go back home!</a>
 </div>
-
-<a href="{% url 'home' %}">Let's go back home!</a>
 
 {% endblock %}

@@ -1,7 +1,63 @@
 body {
-  width: 100%;
   padding: 20px;
   background: #191919;
   color: white; }
+  body .no-margin {
+    margin: 0 !important; }
+  body ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    body ul li {
+      background: #252525;
+      border-radius: 10px;
+      margin: 16px 0;
+      padding: 16px 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; }
+      body ul li .item-title {
+        font-size: 1.5em; }
+  body .actions-buttons {
+    display: flex;
+    gap: 16px; }
+  body input[type="submit"],
+  body .button {
+    display: block;
+    width: fit-content;
+    margin: 16px 0;
+    padding: 8px 16px;
+    border-radius: 10px;
+    color: white; }
+    body input[type="submit"]:hover,
+    body .button:hover {
+      text-decoration: none; }
+    body input[type="submit"].primary-button,
+    body .button.primary-button {
+      background-color: #007bff; }
+      body input[type="submit"].primary-button:hover,
+      body .button.primary-button:hover {
+        background-color: #0056b3; }
+    body input[type="submit"].secondary-button,
+    body .button.secondary-button {
+      background-color: #343a40; }
+      body input[type="submit"].secondary-button:hover,
+      body .button.secondary-button:hover {
+        background-color: #23272b; }
+  body input,
+  body textarea,
+  body select {
+    background: #252525;
+    color: white; }
+    body input[type="submit"],
+    body textarea[type="submit"],
+    body select[type="submit"] {
+      border: none;
+      background-color: #007bff; }
+      body input[type="submit"]:hover,
+      body textarea[type="submit"]:hover,
+      body select[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #0056b3; }
 
 /*# sourceMappingURL=base.css.map */

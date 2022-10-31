@@ -6,14 +6,22 @@ To-Do List
 
 {% block content %}
 <h1>My To-Do List</h1>
-<a href="{% url 'create' %}">New task</a>
+<a href="{% url 'create' %}" class="button primary-button">New task</a>
+
+{% if tasks|length > 0 %}
 <ul>
     {% for task in tasks %}
     <li>
-        <a href="{% url 'detail' pk=task.pk %}">{{ task.title }}</a>
-        <p>{{ task.description }}</p>
-        <a href="{% url 'delete' pk=task.pk %}">Delete</a>
+        <div>
+            <a href="{% url 'detail' pk=task.pk %}" class="item-title">{{ task.title }}</a>
+            <p>{{ task.get_status_display }}</p>
+            <p>{{ task.description }}</p>
+        </div>
+        <a href="{% url 'delete' pk=task.pk %}" class="button secondary-button no-margin">Delete</a>
     </li>
     {% endfor %}
 </ul>
+{% else %}
+<p>No task for the moment.</p>
+{% endif %}
 {% endblock %}

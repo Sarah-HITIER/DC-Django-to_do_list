@@ -1,6 +1,87 @@
+$primary: #007bff;
+$primary-hover: #0056b3;
+$secondary: #343a40;
+$secondary-hover: #23272b;
+$background-cards: rgb(37, 37, 37);
+
 body {
-    width: 100%;
     padding: 20px;
     background: rgb(25, 25, 25);
     color: white;
+
+    .no-margin {
+        margin: 0 !important;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            background: $background-cards;
+            border-radius: 10px;
+            margin: 16px 0;
+            padding: 16px 16px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .item-title {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .actions-buttons {
+        display: flex;
+        gap: 16px;
+    }
+
+    input[type="submit"],
+    .button {
+        display: block;
+        width: fit-content;
+        margin: 16px 0;
+        padding: 8px 16px;
+        border-radius: 10px;
+        color: white;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &.primary-button {
+            background-color: $primary;
+
+            &:hover {
+                background-color: $primary-hover;
+            }
+        }
+
+        &.secondary-button {
+            background-color: $secondary;
+
+            &:hover {
+                background-color: $secondary-hover;
+            }
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        background: $background-cards;
+        color: white;
+
+        &[type="submit"] {
+            border: none;
+            background-color: $primary;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $primary-hover;
+            }
+        }
+    }
 }

@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block content %}
-<a href="{% url 'home'%}">Back to home</a>
-
 <h1>{{title}} a task</h1>
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="{{title}} task">
 </form>
+
+<a href="{% url 'home'%}" class="button secondary-button">Back to home</a>
 {% endblock %}
